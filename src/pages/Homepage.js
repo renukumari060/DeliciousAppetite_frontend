@@ -1,26 +1,41 @@
-import { Title } from "../styled"
-import { Link } from "react-router-dom"
-import { LinkWord } from "../styled"
-import styled from "styled-components"
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRecipes } from "../store/recipe/thunks";
+import { selectAllRecipes } from "../store/recipe/selectors";
+//import { NavLink } from "react-router-dom";
+
+import { Container } from "react-bootstrap";
 
 export const Homepage = () => {
+  const dispatch = useDispatch();
+  const recipes = useSelector(selectAllRecipes);
+  console.log("selectorResponse", recipes);
+
+  useEffect(() => {
+    dispatch(fetchRecipes());
+  }, [dispatch]);
 
   return (
     <Container>
-     <h3>Hello there 👋</h3>
-     <p>General information:</p>
-     <ul>
-      <li>Go to your backend and modify the config url</li>
-      <li>Make sure you clicked on the <b>use template</b> button on github</li>
-      <li>This template is using <a style={LinkWord} target="_blank" href="https://styled-components.com/">styled components</a>, you don't have to use it</li>
-      <li>You don't have to follow the folder structure, feel free to adapt to your own</li>
-      <li>Login and SignUp are already implemented</li>
-      <li>Modify this page to create your own homeepage</li>
-     </ul>
+      <h1>Recipes</h1>
+      {recipes &&
+        recipes.map((recipe) => {
+          return (
+            <div key={recipe.id}>
+              <h2>Title: {recipe.title}</h2>
+              <p>Time: {recipe.time}</p>
+              <iframe
+                alt={recipe.id}
+                title={recipe.title}
+                src={recipe.videoUrl}
+                width="580"
+                height="370"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
+                allowfullscreen="true"
+              />
+            </div>
+          );
+        })}
     </Container>
-  )
-}
-
-const Container = styled.div`
-  margin: 20px
-`
+  );
+};
