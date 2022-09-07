@@ -1,5 +1,5 @@
-import { fetchRecipeSuccess } from "./slice";
-//import { apiUrl } from "../../config/constants";
+import { fetchRecipeSuccess, recipeDetailsFetched } from "./slice";
+import { apiUrl } from "../../config/constants";
 const axios = require("axios");
 
 //HomePage
@@ -12,4 +12,21 @@ export const fetchRecipes = () => async (dispatch, getState) => {
   } catch (e) {
     console.log(e.message);
   }
+};
+
+//DEATAILS PAGE
+
+export const fetchRecipeById = (id) => {
+  return async (dispatch, getState) => {
+    try {
+      console.log("hello");
+      const response = await axios.get(`${apiUrl}/recipe/${id}`);
+
+      console.log("deatils", response.data.recipe);
+
+      dispatch(recipeDetailsFetched(response.data.recipe));
+    } catch (e) {
+      console.log(e);
+    }
+  };
 };

@@ -14,9 +14,14 @@ const recipesSlice = createSlice({
       const newRecipeArray = action.payload;
       state.allRecipes = newRecipeArray;
     },
+    recipeDetailsFetched: (state, action) => {
+      console.log("action details recipe", action);
+      state.recipesDetails = action.payload;
+    },
   },
 });
 
-export const { fetchRecipeSuccess } = recipesSlice.actions;
+export const { fetchRecipeSuccess, recipeDetailsFetched } =
+  recipesSlice.actions;
 
 export default recipesSlice.reducer;

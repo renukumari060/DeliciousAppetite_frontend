@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRecipes } from "../store/recipe/thunks";
 import { selectAllRecipes } from "../store/recipe/selectors";
-//import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { Container } from "react-bootstrap";
 
@@ -22,7 +22,11 @@ export const Homepage = () => {
         recipes.map((recipe) => {
           return (
             <div key={recipe.id}>
-              <h2>Title: {recipe.title}</h2>
+              <NavLink to={`/recipe/${recipe.id}`}>
+                <div>
+                  <h2>Title: {recipe.title}</h2>
+                </div>
+              </NavLink>{" "}
               <p>Time: {recipe.time}</p>
               <iframe
                 alt={recipe.id}
