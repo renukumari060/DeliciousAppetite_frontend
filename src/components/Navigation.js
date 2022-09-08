@@ -23,10 +23,15 @@ export const Navigation = () => {
         <span />
       </Hamburger>
       <Menu open={open}>
-        <MenuLink to="/empty1">Empty 1</MenuLink>
-        <MenuLink to="/empty2">Empty 2</MenuLink>
+        {/* <MenuLink to="/empty1">Empty 1</MenuLink> */}
+        {/* <MenuLink to="/addrecipe/id">Add Recipe</MenuLink> */}
+        {/* <MenuLink to="/empty2">Empty 2</MenuLink> */}
         {token ? (
-          <button onClick={() => dispatch(logOut())}>Logout</button>
+          <>
+            <MenuLink to="/addrecipe/id">Add Recipe</MenuLink>
+
+            <button onClick={() => dispatch(logOut())}>Logout</button>
+          </>
         ) : (
           <MenuLink to="/login">Login</MenuLink>
         )}

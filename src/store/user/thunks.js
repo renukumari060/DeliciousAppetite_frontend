@@ -3,7 +3,13 @@ import axios from "axios";
 import { selectToken } from "./selectors";
 import { appLoading, appDoneLoading, setMessage } from "../appState/slice";
 import { showMessageWithTimeout } from "../appState/thunks";
-import { loginSuccess, logOut, tokenStillValid } from "./slice";
+
+import {
+  loginSuccess,
+  logOut,
+  tokenStillValid,
+  addRecipeSuccess,
+} from "./slice";
 
 export const signUp = (name, email, password) => {
   return async (dispatch, getState) => {
@@ -113,6 +119,49 @@ export const getUserWithStoredToken = () => {
       // get rid of the token by logging out
       dispatch(logOut());
       dispatch(appDoneLoading());
+    }
+  };
+};
+
+//thunks for Adding Recipe
+
+export const AddRecipeThunk = (
+  title,
+  videoUrl,
+  time,
+  serving,
+  steps,
+  ingredients
+) => {
+  return async (dispatch, getState) => {
+    try {
+      console.log("hello from Add recipe");
+
+      const token = selectToken(getState());
+
+      dispatch(appLoading());
+
+      const response = await axios.post(
+        `${apiUrl}/recipe`,
+        {
+          title,
+          videoUrl,
+          time,
+          serving,
+          steps,
+          ingredients,
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      console.log("recipe", response);
+      dispatch(
+        showMessageWithTimeout("success", false, response.data.message, 3000)
+      );
+      dispatch(addRecipeSuccess(response.data.newRecipe));
+      dispatch(appDoneLoading());
+    } catch (e) {
+      console.log(e.message);
     }
   };
 };
