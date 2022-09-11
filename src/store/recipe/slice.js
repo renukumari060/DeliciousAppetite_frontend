@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   allRecipes: [],
   recipesDetails: {},
+  searchResult: [],
 };
 
 const recipesSlice = createSlice({
@@ -18,10 +19,14 @@ const recipesSlice = createSlice({
       console.log("action details recipe", action);
       state.recipesDetails = action.payload;
     },
+    resultList: (state, action) => {
+      console.log("search result", action);
+      state.searchResult = action.payload;
+    },
   },
 });
 
-export const { fetchRecipeSuccess, recipeDetailsFetched } =
+export const { fetchRecipeSuccess, recipeDetailsFetched, resultList } =
   recipesSlice.actions;
 
 export default recipesSlice.reducer;

@@ -68,12 +68,9 @@ export default function DetailsPage() {
                   return (
                     <div key={ingredient.id}>
                       <div>
-                        <ul>
-                          <li>
-                            {ingredient.text} {"-"} {ingredient.amount}{" "}
-                            {ingredient.units}
-                          </li>
-                        </ul>
+                        <input type="checkbox" />
+                        {ingredient.text} {"-"} {ingredient.amount}{" "}
+                        {ingredient.units}
                       </div>
                     </div>
                   );

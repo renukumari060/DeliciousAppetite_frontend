@@ -5,6 +5,7 @@ import { selectAllRecipes } from "../store/recipe/selectors";
 import { NavLink } from "react-router-dom";
 
 import { Container } from "react-bootstrap";
+import SearchBar from "../components/SearchBar";
 
 export const Homepage = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export const Homepage = () => {
 
   return (
     <Container>
+      <SearchBar />
       <h1>Recipes</h1>
       {recipes &&
         recipes.map((recipe) => {
