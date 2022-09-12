@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import { FormGroup, FormControlLabel, Switch } from "@mui/material";
 
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -13,18 +14,30 @@ export default function AddRecipe() {
   const [videoUrl, setVideoUrl] = useState("");
   const [time, setTime] = useState("");
   const [serving, setServing] = useState("");
+  const [filter, setFilter] = useState("BreakFast");
   const [steps, setSteps] = useState("");
+  const [isPublic, setIsPublic] = useState(true);
   const [ingredients, setIngredients] = useState([
     { text: "", amount: "", units: "" },
   ]);
-
   const dispatch = useDispatch();
 
   function submitForm(event) {
     event.preventDefault();
 
+    const embedLink = videoUrl.replace("watch?v=", "embed/");
+
     dispatch(
-      AddRecipeThunk(title, videoUrl, time, serving, steps, ingredients)
+      AddRecipeThunk({
+        title,
+        videoUrl: embedLink,
+        time,
+        serving,
+        filter,
+        steps,
+        isPublic,
+        ingredients,
+      })
     );
 
     setTitle("");
@@ -94,6 +107,42 @@ export default function AddRecipe() {
             placeholder="Serving"
           />
         </Form.Group>
+
+        <h3>Category</h3>
+        <select
+          onChange={({ target }) => {
+            console.log("target", target.value);
+            setFilter(target.value);
+          }}
+        >
+          <option value="all">All Videos</option>
+          <option value="breakfast">BreakFast</option>
+          <option value="lunch">Lunch</option>
+          <option value="snacks">Snacks</option>
+          <option value="dinner">Dinner</option>
+          <option value="myownvideos">My Own videos</option>
+        </select>
+
+        <div>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Switch
+                  onChange={() => setIsPublic(!isPublic)}
+                  checked={isPublic}
+                />
+              }
+              onChange={(event) => setIsPublic(event.target.value)}
+              label="Public"
+            />
+            {/* <FormControlLabel
+              disabled
+              control={<Switch />}
+              onChange={(event) => setIsPublic(event.target.value)}
+              label="Public"
+            /> */}
+          </FormGroup>
+        </div>
 
         <Form.Group>
           <Form.Label>Steps to prepare:</Form.Label>

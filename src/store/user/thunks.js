@@ -125,14 +125,16 @@ export const getUserWithStoredToken = () => {
 
 //thunks for Adding Recipe
 
-export const AddRecipeThunk = (
+export const AddRecipeThunk = ({
   title,
   videoUrl,
   time,
   serving,
+  filter,
   steps,
-  ingredients
-) => {
+  isPublic,
+  ingredients,
+}) => {
   return async (dispatch, getState) => {
     try {
       console.log("hello from Add recipe");
@@ -149,6 +151,7 @@ export const AddRecipeThunk = (
           time,
           serving,
           steps,
+          isPublic,
           ingredients,
         },
         { headers: { Authorization: `Bearer ${token}` } }

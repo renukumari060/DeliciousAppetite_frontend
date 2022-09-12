@@ -59,6 +59,7 @@ export default function DetailsPage() {
                 <h3>Time: </h3>
                 {recipe.time}
               </div>
+
               <h2>Ingredients</h2>
             </div>
 
