@@ -5,6 +5,7 @@ const initialState = {
   recipesDetails: {},
   searchResult: [],
   allCategories: [],
+  allMyRecipes: [],
 };
 
 const recipesSlice = createSlice({
@@ -29,6 +30,11 @@ const recipesSlice = createSlice({
       const newCategoryArray = action.payload;
       state.allCategories = newCategoryArray;
     },
+    fetchMyRecipeSuccess: (state, action) => {
+      console.log("action all My recipes", action);
+      const newMyRecipesArray = action.payload;
+      state.allMyRecipes = newMyRecipesArray;
+    },
   },
 });
 
@@ -37,6 +43,7 @@ export const {
   recipeDetailsFetched,
   resultList,
   fetchCategorySuccess,
+  fetchMyRecipeSuccess,
 } = recipesSlice.actions;
 
 export default recipesSlice.reducer;

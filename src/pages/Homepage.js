@@ -22,6 +22,12 @@ export const Homepage = () => {
     recipe.title.toLowerCase().includes(input.toLowerCase())
   );
 
+  const filterCategoryInput = [...filterSearchInput].filter((recipe) =>
+    filterCategories.length
+      ? filterCategories.includes(recipe.categoryId)
+      : true
+  );
+
   useEffect(() => {
     dispatch(fetchRecipes());
   }, [dispatch]);
@@ -40,7 +46,7 @@ export const Homepage = () => {
       </Divider>
       <Grid container spacing={3} style={{ width: "100%" }}>
         {recipes &&
-          filterSearchInput.map((recipe) => {
+          filterCategoryInput.map((recipe) => {
             return (
               <Grid item key={recipe.id}>
                 <Card sx={{ maxWidth: 250 }} variant="outlined">

@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { selectetails } from "../store/recipe/selectors";
 import { selectAllCategories } from "../store/recipe/selectors";
 import { fetchCategories } from "../store/recipe/thunks";
 
