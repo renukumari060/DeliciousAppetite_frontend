@@ -7,6 +7,7 @@ import { Navigation, MessageBox } from "./components";
 import { Homepage, Login, SignUp } from "./pages";
 import DetailsPage from "./pages/DetailsPage";
 import AddRecipe from "./pages/AddRecipe";
+import MyRecipes from "./pages/MyRecipes";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/addrecipe/:id" element={<AddRecipe />} />
+        <Route path="/myrecipes/:id" element={<MyRecipes />} />
       </Routes>
     </div>
   );

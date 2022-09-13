@@ -4,23 +4,24 @@ import { fetchRecipes } from "../store/recipe/thunks";
 import { selectAllRecipes } from "../store/recipe/selectors";
 import { Container, Grid, Typography, Button, Divider } from "@mui/material";
 import SearchBar from "../components/SearchBar";
+import selectUser from "../store/user/selectors";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Category from "../components/Category";
 
-export const Homepage = () => {
+export default function MyRecipes() {
   const dispatch = useDispatch();
   const recipes = useSelector(selectAllRecipes);
-
+  console.log("selectorResponse", recipes);
   const [input, setInput] = useState("");
-  const [filterCategories, setFilterCategories] = useState([]); // [2, 4]
 
-  console.log("filterCategories", filterCategories);
+  console.log("input", input);
+
   const filterSearchInput = [...recipes].filter((recipe) =>
     recipe.title.toLowerCase().includes(input.toLowerCase())
   );
+  console.log("searched result", filterSearchInput);
 
   useEffect(() => {
     dispatch(fetchRecipes());
@@ -29,10 +30,6 @@ export const Homepage = () => {
   return (
     <Container>
       <SearchBar input={input} setInput={setInput} />
-      <Category
-        filterCategories={filterCategories}
-        setFilterCategories={setFilterCategories}
-      />
       <Divider textAlign="left" style={{ marginTop: 15, marginBottom: 15 }}>
         <Typography gutterBottom variant="h6" component="div">
           <span className="heading-color">All Recipes</span>
@@ -76,4 +73,4 @@ export const Homepage = () => {
       </Grid>
     </Container>
   );
-};
+}

@@ -1,4 +1,8 @@
-import { fetchRecipeSuccess, recipeDetailsFetched } from "./slice";
+import {
+  fetchRecipeSuccess,
+  recipeDetailsFetched,
+  fetchCategorySuccess,
+} from "./slice";
 import { apiUrl } from "../../config/constants";
 const axios = require("axios");
 
@@ -29,4 +33,17 @@ export const fetchRecipeById = (id) => {
       console.log(e);
     }
   };
+};
+
+//category
+export const fetchCategories = () => async (dispatch, getState) => {
+  try {
+    console.log("Hello from category thunks");
+    const response = await axios.get("http://localhost:4000/recipe/category");
+    console.log("all Categories thunks response", response);
+
+    dispatch(fetchCategorySuccess(response.data));
+  } catch (e) {
+    console.log(e.message);
+  }
 };

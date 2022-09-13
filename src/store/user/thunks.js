@@ -150,6 +150,7 @@ export const AddRecipeThunk = ({
           videoUrl,
           time,
           serving,
+          filter,
           steps,
           isPublic,
           ingredients,

@@ -115,12 +115,10 @@ export default function AddRecipe() {
             setFilter(target.value);
           }}
         >
-          <option value="all">All Videos</option>
-          <option value="breakfast">BreakFast</option>
-          <option value="lunch">Lunch</option>
-          <option value="snacks">Snacks</option>
-          <option value="dinner">Dinner</option>
-          <option value="myownvideos">My Own videos</option>
+          <option value="Breakfast">BreakFast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Snacks">Snacks</option>
+          <option value="Dinner">Dinner</option>
         </select>
 
         <div>
