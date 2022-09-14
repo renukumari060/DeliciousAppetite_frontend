@@ -13,6 +13,7 @@ import Category from "../components/Category";
 export const Homepage = () => {
   const dispatch = useDispatch();
   const recipes = useSelector(selectAllRecipes);
+  console.log("homepage recipe", recipes);
 
   const [input, setInput] = useState("");
   const [filterCategories, setFilterCategories] = useState([]); // [2, 4]

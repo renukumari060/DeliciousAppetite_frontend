@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchRecipeById } from "../store/recipe/thunks";
 import { selectRecipeDetails } from "../store/recipe/selectors";
+import Comments from "../components/Comments";
 
 export default function DetailsPage() {
   const { id } = useParams();
@@ -39,7 +40,6 @@ export default function DetailsPage() {
               />
               <div>
                 <h2>Tips for Future Reference: </h2>
-                {/* <p>{recipe.steps}</p> */}
 
                 {!steps
                   ? "no steps"
@@ -53,12 +53,14 @@ export default function DetailsPage() {
                       );
                     })}
               </div>
+              <br />
               <div>
                 <h3> Serving: </h3>
                 {recipe.serving}
                 <h3>Time: </h3>
                 {recipe.time}
               </div>
+              <br />
 
               <h2>Ingredients</h2>
             </div>
@@ -77,6 +79,8 @@ export default function DetailsPage() {
                   );
                 })}
           </div>
+          <br />
+          <Comments />
         </>
       )}
     </>

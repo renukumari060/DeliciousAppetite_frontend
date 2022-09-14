@@ -133,12 +133,6 @@ export default function AddRecipe() {
               onChange={(event) => setIsPublic(event.target.value)}
               label="Public"
             />
-            {/* <FormControlLabel
-              disabled
-              control={<Switch />}
-              onChange={(event) => setIsPublic(event.target.value)}
-              label="Public"
-            /> */}
           </FormGroup>
         </div>
 

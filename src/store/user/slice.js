@@ -4,6 +4,7 @@ const initialState = {
   token: localStorage.getItem("token"),
   profile: null,
   recipe: [],
+  comment: null,
 };
 
 export const userSlice = createSlice({

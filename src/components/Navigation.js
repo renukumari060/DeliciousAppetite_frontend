@@ -5,6 +5,13 @@ import { selectToken } from "../store/user/selectors";
 import { logOut } from "../store/user/slice";
 import { Link } from "react-router-dom";
 
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
 
@@ -13,31 +20,40 @@ export const Navigation = () => {
   const token = useSelector(selectToken);
 
   return (
-    <Nav>
-      <Logo href="/">
-        Delicious<span>Appetite</span>
-      </Logo>
-      <Hamburger onClick={() => setOpen(!open)}>
-        <span />
-        <span />
-        <span />
-      </Hamburger>
-      <Menu open={open}>
-        {/* <MenuLink to="/empty1">Empty 1</MenuLink> */}
-        {/* <MenuLink to="/addrecipe/id">Add Recipe</MenuLink> */}
-        {/* <MenuLink to="/empty2">Empty 2</MenuLink> */}
+    <AppBar position="static">
+      <Toolbar icon={""}>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          sx={{ mr: 2 }}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Delicious<span>Appetite</span>
+        </Typography>
         {token ? (
           <>
-            <MenuLink to="/addrecipe/id">Add Recipe</MenuLink>
-            <MenuLink to="/myrecipes/id">My Recipes</MenuLink>
+            <Button variant="contained" href="/addrecipe/id">
+              Add Recipe
+            </Button>
+            <Button variant="contained" href="/myrecipes/id">
+              My Recipe
+            </Button>
 
-            <button onClick={() => dispatch(logOut())}>Logout</button>
+            <Button variant="contained" onClick={() => dispatch(logOut())}>
+              Logout
+            </Button>
           </>
         ) : (
-          <MenuLink to="/login">Login</MenuLink>
+          <Button variant="contained" href="/login">
+            Login
+          </Button>
         )}
-      </Menu>
-    </Nav>
+      </Toolbar>
+    </AppBar>
   );
 };
 
@@ -49,7 +65,6 @@ const MenuLink = styled(Link)`
   color: #ececec;
   transition: all 0.3s ease-in;
   font-size: 0.9rem;
-
   &:hover {
     color: #9cc094;
   }
@@ -74,7 +89,6 @@ const Logo = styled.a`
   text-decoration: none;
   font-weight: 800;
   font-size: 1.7rem;
-
   span {
     font-weight: 300;
     font-size: 1.3rem;
@@ -92,7 +106,6 @@ const Hamburger = styled.div`
     margin-bottom: 4px;
     border-radius: 5px;
   }
-
   @media (max-width: 780px) {
     display: flex;
   }
@@ -103,7 +116,6 @@ const Menu = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-
   @media (max-width: 780px) {
     overflow: hidden;
     flex-direction: column;

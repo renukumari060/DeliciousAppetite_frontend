@@ -3,12 +3,14 @@ import axios from "axios";
 import { selectToken } from "./selectors";
 import { appLoading, appDoneLoading, setMessage } from "../appState/slice";
 import { showMessageWithTimeout } from "../appState/thunks";
+import { fetchRecipeById } from "../recipe/thunks";
 
 import {
   loginSuccess,
   logOut,
   tokenStillValid,
   addRecipeSuccess,
+  addCommentSuccess,
 } from "./slice";
 
 export const signUp = (name, email, password) => {
@@ -163,6 +165,40 @@ export const AddRecipeThunk = ({
         showMessageWithTimeout("success", false, response.data.message, 3000)
       );
       dispatch(addRecipeSuccess(response.data.newRecipe));
+      dispatch(appDoneLoading());
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+};
+
+//thunks for Adding comment
+
+export const AddComment = ({ comment, recipeId, rating }) => {
+  return async (dispatch, getState) => {
+    try {
+      console.log("hello from Add comment", comment, recipeId);
+
+      const token = selectToken(getState());
+
+      dispatch(appLoading());
+
+      const response = await axios.post(
+        `${apiUrl}/recipe/${recipeId}`,
+        {
+          comment,
+          recipeId,
+          rating,
+        },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      console.log("comment", response);
+      dispatch(
+        showMessageWithTimeout("success", false, response.data.message, 3000)
+      );
+      dispatch(fetchRecipeById(recipeId));
+
       dispatch(appDoneLoading());
     } catch (e) {
       console.log(e.message);
