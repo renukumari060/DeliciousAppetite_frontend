@@ -33,7 +33,7 @@ export default function MyRecipes() {
       <SearchBar input={input} setInput={setInput} />
       <Divider textAlign="left" style={{ marginTop: 15, marginBottom: 15 }}>
         <Typography gutterBottom variant="h6" component="div">
-          <span className="heading-color">All Recipes</span>
+          <span className="heading-color">My Recipes</span>
         </Typography>
       </Divider>
       <Grid container spacing={3} style={{ width: "100%" }}>
