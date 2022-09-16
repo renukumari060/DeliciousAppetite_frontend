@@ -8,6 +8,7 @@ import { Homepage, Login, SignUp } from "./pages";
 import DetailsPage from "./pages/DetailsPage";
 import AddRecipe from "./pages/AddRecipe";
 import MyRecipes from "./pages/MyRecipes";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const dispatch = useDispatch();

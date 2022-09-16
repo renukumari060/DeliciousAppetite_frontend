@@ -7,7 +7,7 @@ import { selectRecipeDetails } from "../store/recipe/selectors";
 import ReactStars from "react-rating-stars-component";
 
 import { Grid, Typography } from "@mui/material";
-import { Paper } from "@mui/material";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -105,50 +105,3 @@ export default function Comments() {
     </>
   );
 }
-
-// <div>
-//   {!recipe.comments
-//     ? "no recipe yet"
-//     : recipe.comments.map((comment) => {
-//         return (
-//           <div key={comment.id}>
-//             <div>
-//               {comment.userName} {"-"}
-//               {comment.commentContent}
-//               <ReactStars
-//                 count={5}
-//                 size={24}
-//                 activeColor="#ffd700"
-//                 value={comment.rating}
-//               />
-//             </div>
-//           </div>
-//         );
-//       })}
-//   <h2>Comments</h2>
-//   <Form.Group controlId="formBasicText">
-//     <Form.Control
-//       value={comment}
-//       onChange={(event) => setComment(event.target.value)}
-//       type="text"
-//       placeholder="Comment here"
-//       required
-//     />
-//   </Form.Group>
-
-//   <Form.Group controlId="formBasicText">
-//     <Form.Control
-//       value={rating}
-//       onChange={(event) => setRating(event.target.value)}
-//       type="number"
-//       placeholder="rate here"
-//       required
-//     />
-//   </Form.Group>
-
-//   <Form.Group className="mt-5">
-//     <Button variant="primary" type="submit" onClick={submitForm}>
-//       Submit
-//     </Button>
-//   </Form.Group>
-// </div>

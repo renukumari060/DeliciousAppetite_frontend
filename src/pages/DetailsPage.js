@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchRecipeById } from "../store/recipe/thunks";
 import { selectRecipeDetails } from "../store/recipe/selectors";
 import Comments from "../components/Comments";
 
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, ButtonGroup, Button } from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 
@@ -15,9 +15,15 @@ export default function DetailsPage() {
   const recipe = useSelector(selectRecipeDetails);
   console.log("details selector", recipe);
   const dispatch = useDispatch();
+  const [multi, setMulti] = useState(1);
+  console.log("MultiButton", multi);
 
   const steps = recipe?.steps?.split(".");
   console.log("steps", steps);
+
+  // function submit(event) {
+  //   event.preventDefault();
+  // }
 
   useEffect(() => {
     dispatch(fetchRecipeById(id));
@@ -135,6 +141,18 @@ export default function DetailsPage() {
             }}
             variant="h6"
           >
+            <ButtonGroup
+              variant="contained"
+              color="primary"
+              aria-label="contained primary button group"
+              // type="submit"
+              // onClick={submit}
+            >
+              <Button onClick={() => setMulti(1)}>1x</Button>
+              <Button onClick={() => setMulti(2)}>2x</Button>
+              <Button onClick={() => setMulti(3)}>3x</Button>
+            </ButtonGroup>
+
             <h2>Ingredients:</h2>
           </Typography>
 
@@ -145,7 +163,7 @@ export default function DetailsPage() {
                   <div key={ingredient.id}>
                     <div>
                       <input type="checkbox" />
-                      {ingredient.text} {"-"} {ingredient.amount}{" "}
+                      {ingredient.text} {"-"} {ingredient.amount * multi}{" "}
                       {ingredient.units}
                     </div>
                   </div>
