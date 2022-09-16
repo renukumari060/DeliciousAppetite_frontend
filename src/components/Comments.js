@@ -5,21 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { AddComment } from "../store/user/thunks";
 import { selectRecipeDetails } from "../store/recipe/selectors";
 import ReactStars from "react-rating-stars-component";
-
 import { Grid, Typography } from "@mui/material";
-
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import { selectToken } from "../store/user/selectors";
 
 export default function Comments() {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState("");
   const dispatch = useDispatch();
-
   const recipe = useSelector(selectRecipeDetails);
-  const token = useSelector(selectToken);
 
   function submitForm(event) {
     event.preventDefault();
