@@ -11,7 +11,8 @@ const axios = require("axios");
 //HomePage
 export const fetchRecipes = () => async (dispatch, getState) => {
   try {
-    const response = await axios.get("http://localhost:4000/recipe");
+    // const response = await axios.get("http://localhost:4000/recipe");
+    const response = await axios.get(`${apiUrl}/recipe`);
     console.log("allRecipes thunks response", response);
 
     dispatch(fetchRecipeSuccess(response.data));
@@ -41,7 +42,8 @@ export const fetchRecipeById = (id) => {
 export const fetchCategories = () => async (dispatch, getState) => {
   try {
     console.log("Hello from category thunks");
-    const response = await axios.get("http://localhost:4000/recipe/category");
+    // const response = await axios.get("http://localhost:4000/recipe/category");
+    const response = await axios.get(`${apiUrl}/recipe/category`);
     console.log("all Categories thunks response", response);
 
     dispatch(fetchCategorySuccess(response.data));
@@ -55,8 +57,11 @@ export const fetchMyRecipes = () => async (dispatch, getState) => {
   try {
     const token = selectToken(getState());
 
+    // const response = await axios.get(
+    //   `http://localhost:4000/recipe/myrecipes`,
+
     const response = await axios.get(
-      `http://localhost:4000/recipe/myrecipes`,
+      `${apiUrl}/recipe/myrecipes`,
 
       { headers: { Authorization: `Bearer ${token}` } }
     );

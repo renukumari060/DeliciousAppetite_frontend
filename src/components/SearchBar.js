@@ -1,5 +1,4 @@
-import { TextField } from "@mui/material";
-import { Container } from "react-bootstrap";
+import { TextField, Typography, Container } from "@mui/material";
 
 export default function SearchBar(props) {
   return (
@@ -15,10 +14,22 @@ export default function SearchBar(props) {
           gap: 8,
         }}
       >
-        <h2>What do you want to try?</h2>
+        <Typography
+          sx={{
+            fontFamily: "Ubuntu,sans-serif",
+            fontWeight: "700",
+            color: "orange",
+            textAlign: "center",
+            marginTop: "10px",
+            marginBottom: "10px",
+          }}
+          variant="h3"
+        >
+          What do you want to try?
+        </Typography>
 
         <TextField
-          style={{ width: "100%", borderRadius: 30 }}
+          style={{ width: "80%", borderRadius: 30, color: "white" }}
           id="outlined-basic"
           variant="outlined"
           value={props.input}

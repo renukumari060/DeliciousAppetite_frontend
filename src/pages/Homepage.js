@@ -2,13 +2,27 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRecipes } from "../store/recipe/thunks";
 import { selectAllRecipes } from "../store/recipe/selectors";
-import { Container, Grid, Typography, Button, Divider } from "@mui/material";
+import {
+  Container,
+  Grid,
+  Typography,
+  Button,
+  Divider,
+  Paper,
+} from "@mui/material";
 import SearchBar from "../components/SearchBar";
+//import Image from "../../public/pexels-ella-olsson-1640777.jpg";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Category from "../components/Category";
+
+const styles = {
+  paperContainer: {
+    backgroundImage: `url(pexels-ella-olsson-1640777.jpg)`,
+  },
+};
 
 export const Homepage = () => {
   const dispatch = useDispatch();
@@ -35,11 +49,15 @@ export const Homepage = () => {
 
   return (
     <Container>
-      <SearchBar input={input} setInput={setInput} />
-      <Category
-        filterCategories={filterCategories}
-        setFilterCategories={setFilterCategories}
-      />
+      <Grid>
+        <Paper style={styles.paperContainer}>
+          <SearchBar input={input} setInput={setInput} />
+          <Category
+            filterCategories={filterCategories}
+            setFilterCategories={setFilterCategories}
+          />
+        </Paper>
+      </Grid>
       <Divider textAlign="left" style={{ marginTop: 15, marginBottom: 15 }}>
         <Typography gutterBottom variant="h6" component="div">
           <span className="heading-color">All Recipes</span>
@@ -56,7 +74,7 @@ export const Homepage = () => {
                     title={recipe.title}
                     src={recipe.videoUrl}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture fullscreen"
-                    allowfullscreen="true"
+                    allowFullScreen={true}
                   />
                   <CardContent>
                     <Typography
