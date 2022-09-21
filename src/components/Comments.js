@@ -17,7 +17,8 @@ export default function Comments() {
   function submitForm(event) {
     event.preventDefault();
     dispatch(AddComment({ comment: comment, recipeId: recipe.id, rating }));
-    comment("");
+    setComment("");
+    setRating("");
   }
 
   return (

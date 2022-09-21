@@ -14,7 +14,7 @@ export default function AddRecipe() {
   const [videoUrl, setVideoUrl] = useState("");
   const [time, setTime] = useState("");
   const [serving, setServing] = useState("");
-  const [filter, setFilter] = useState("BreakFast");
+  const [filter, setFilter] = useState("Breakfast");
   const [steps, setSteps] = useState("");
   const [isPublic, setIsPublic] = useState(true);
   const [ingredients, setIngredients] = useState([
@@ -24,6 +24,7 @@ export default function AddRecipe() {
 
   function submitForm(event) {
     event.preventDefault();
+    console.log(filter);
 
     const embedLink = videoUrl.replace("watch?v=", "embed/");
 
@@ -45,6 +46,7 @@ export default function AddRecipe() {
     setTime("");
     setServing("");
     setSteps("");
+    // setIngredients("");
   }
 
   useEffect(() => {
@@ -192,6 +194,7 @@ export default function AddRecipe() {
             </div>
           );
         })}
+
         <Form.Group className="mt-5">
           <Button
             variant="primary"
@@ -205,8 +208,9 @@ export default function AddRecipe() {
             +
           </Button>
         </Form.Group>
-
-        <Link to="/">Click here to go Recipe Page</Link>
+        <Button>
+          <Link to="/">Click here to go Recipe Page</Link>
+        </Button>
       </Form>
     </Container>
   );

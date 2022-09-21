@@ -139,7 +139,7 @@ export const AddRecipeThunk = ({
 }) => {
   return async (dispatch, getState) => {
     try {
-      console.log("hello from Add recipe");
+      console.log("hello from Add recipe", filter);
 
       const token = selectToken(getState());
 
