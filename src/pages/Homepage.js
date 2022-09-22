@@ -58,7 +58,7 @@ export const Homepage = () => {
           />
         </Paper>
       </Grid>
-      <Divider textAlign="left" style={{ marginTop: 15, marginBottom: 15 }}>
+      <Divider textAlign="left" style={{ marginTop: 95, marginBottom: 25 }}>
         <Typography gutterBottom variant="h6" component="div">
           <span className="heading-color">All Recipes</span>
         </Typography>

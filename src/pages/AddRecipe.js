@@ -46,7 +46,6 @@ export default function AddRecipe() {
     setTime("");
     setServing("");
     setSteps("");
-    // setIngredients("");
   }
 
   useEffect(() => {

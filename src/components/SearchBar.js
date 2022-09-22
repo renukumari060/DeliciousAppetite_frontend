@@ -29,7 +29,12 @@ export default function SearchBar(props) {
         </Typography>
 
         <TextField
-          style={{ width: "80%", borderRadius: 30, color: "white" }}
+          style={{
+            width: "80%",
+            borderRadius: 30,
+            backgroundColor: "white",
+            opacity: "60%",
+          }}
           id="outlined-basic"
           variant="outlined"
           value={props.input}
