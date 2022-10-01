@@ -67,6 +67,7 @@ export default function AddRecipe() {
   return (
     <Container>
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+        <br />
         <h1 className="mt-5 mb-5">Post your recipe here:-</h1>
         <Form.Group controlId="formBasicName">
           <Form.Label>Title</Form.Label>
@@ -108,6 +109,7 @@ export default function AddRecipe() {
             placeholder="Serving"
           />
         </Form.Group>
+        <br />
 
         <h3>Category</h3>
         <select
@@ -207,9 +209,8 @@ export default function AddRecipe() {
             +
           </Button>
         </Form.Group>
-        <Button>
-          <Link to="/">Click here to go Recipe Page</Link>
-        </Button>
+
+        <Link to="/">Click here to go Recipe Page</Link>
       </Form>
     </Container>
   );

@@ -20,7 +20,7 @@ export const Navigation = () => {
   const token = useSelector(selectToken);
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Toolbar icon={""}>
         <IconButton
           size="large"
