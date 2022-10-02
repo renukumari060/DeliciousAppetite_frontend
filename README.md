@@ -19,9 +19,26 @@ I decided to challenge myself and in 10 days I created a prototype of a Deliciou
 
 
 ### Wireframe <a href='https://balsamiq.cloud/shhjng1/p7amrbd/r6B57'>Click me!</a>
-
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/wireframe_1.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/wireframe_2.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/wireframe_3.png"></img>
 
 ### Database Model <a href='https://dbdiagram.io/d/6315d45b0911f91ba538fef9'>Click me!</a>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/dbdiagram.png"></img>
+
+
+### Screenshot 
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/search_bar.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/details_video.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/ingredients_steps.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/comments.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/post_comment.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/postrecipe_1.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/postrecipe_2.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/myrecipe.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/login.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/signup.png"></img>
+
 
 
 
