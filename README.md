@@ -1,38 +1,47 @@
-# Frontend template
+# Delicious Appetite
 
-This is a simple react/redux/jwt template to start a project quickly
+Find the deployed version <a href='https://delicious-appetite.netlify.app/'>here</a>!
+## Project
+Delicious Appetite <a href='https://github.com/renukumari060/DeliciousAppetite_frontend'>🔗Code</a>   <a href='https://delicious-appetite.netlify.app/'> ☀️Site</a>
+I decided to challenge myself and in 10 days I created a prototype of a Delicious Appetite. My project is about recipe videos, where we can keep a collection of favorite youtube videos. Actually I often find myself searching for one specific video that I already tried in past and liked the recipe. But sometime it is difficult to find the same one. So I made this website, where you can make a collection of youtube videos, and also can see the other users'  added videos.
+## Front-end
+<img src='https://camo.githubusercontent.com/876426d64480dd18283dc72bcf0f293d6871c746d5358168e28565efc1c0334d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3631444146423f6c6f676f3d7265616374266c6f676f436f6c6f723d7768697465267374796c653d666f722d7468652d6261646765'>
+<img src='https://camo.githubusercontent.com/a3bbc59f190482c45788b1d213d1dc1b8f426691e0e6320aefe31bc6832f3491/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656475782d3736344142433f6c6f676f3d7265647578266c6f676f436f6c6f723d7768697465267374796c653d666f722d7468652d6261646765' />
+<img width='79px' src='https://camo.githubusercontent.com/2435c2a64789b8a71c701a1a593b4a6e6869789bfb0626e515dc2a6b6dffa6c5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d435353332d3135373242363f7374796c653d666c61742d737175617265266c6f676f3d63737333'>
 
-## Table of contents:
+## Back-end
+<a href='https://github.com/renukumari060/DeliciousAppetite_backend'>Link</a> to server repository
+<br/>
+<img src='https://camo.githubusercontent.com/a3bbc59f190482c45788b1d213d1dc1b8f426691e0e6320aefe31bc6832f3491/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656475782d3736344142433f6c6f676f3d7265647578266c6f676f436f6c6f723d7768697465267374796c653d666f722d7468652d6261646765' /><br/>
+<img src='https://camo.githubusercontent.com/54d885a39ff8ae8e17e1f9dd9286eb8e754d4c44c6ff3a31b2ba8f143f454254/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f457870726573732d3030303030303f6c6f676f3d65787072657373266c6f676f436f6c6f723d7768697465267374796c653d666f722d7468652d6261646765' /><br/>
+<img src='https://camo.githubusercontent.com/ea0a0d5491e470f09b738a5b5412dc143ffdb1018f4ead88124374ffc576dbd4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f506f737467726553514c2d3431363945313f6c6f676f3d706f737467726573716c266c6f676f436f6c6f723d7768697465267374796c653d666f722d7468652d6261646765' /><br/>
+<img src='https://camo.githubusercontent.com/1d7814efc567041c56f7cb83654566f6be83d8b2ff4392b6c1321bfeed7d7dc1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f53657175656c697a652d3532423045373f6c6f676f3d73657175656c697a65266c6f676f436f6c6f723d7768697465267374796c653d666f722d7468652d6261646765' />
 
-- **[Setup](#setup-how-to-use-this-template)**
-- **[Create React App docs](#cra-docs)**
 
-## SETUP How to use this template
+### Wireframe <a href='https://balsamiq.cloud/shhjng1/p7amrbd/r6B57'>Click me!</a>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/wireframe_1.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/wireframe_2.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/wireframe_3.png"></img>
 
-1. Create a new project based on this template using the `Use this template` button
+### Database Model <a href='https://dbdiagram.io/d/6315d45b0911f91ba538fef9'>Click me!</a>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/dbdiagram.png"></img>
 
-![HOW_TO_USE](https://user-images.githubusercontent.com/20372832/77003323-70966180-695d-11ea-8abe-b362d57135f3.gif)
 
-2. Clone the app
+### Screenshot 
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/search_bar.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/details_video.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/ingredients_steps.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/comments.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/post_comment.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/postrecipe_1.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/postrecipe_2.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/myrecipe.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/login.png"></img>
+<img width="800px" src="https://github.com/renukumari060/DeliciousAppetite_frontend/blob/master/picture/signup.png"></img>
 
-```
-git clone git@github.com:YOUR_GITHUB_NAME/YOUR_PROJECT_NAME.git
-```
 
-3. cd into your project
 
-```
-cd YOUR_PROJECT_NAME
-```
 
-4. install dependencies
 
-```
-npm install
-```
 
-5. Start development server with npm start
 
-```
-npm start
-```
